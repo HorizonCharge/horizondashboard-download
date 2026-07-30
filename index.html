@@ -57,7 +57,14 @@
     color: var(--muted);
     font-size: 17px;
     line-height: 1.5;
-    margin: 0 0 40px;
+    margin: 0 0 12px;
+  }
+
+  p.note {
+    color: var(--muted-faint);
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0 0 32px;
   }
 
   .card {
@@ -101,6 +108,34 @@
     font-size: 13px;
   }
 
+  .btn-outline {
+    background: transparent;
+    border: 1px solid var(--border-strong);
+    color: var(--accent-soft);
+  }
+  .btn-outline:hover {
+    background: rgba(201,162,39,0.08);
+    border-color: var(--accent);
+  }
+
+  .divider-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: var(--muted-faint);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .divider-row::before,
+  .divider-row::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
   .recommended-tag {
     display: inline-block;
     font-size: 11px;
@@ -136,6 +171,7 @@
     <img class="logo" src="logo.png" alt="HORIZON Budgeting">
     <h1>Download HORIZON</h1>
     <p class="tagline">Your personal finance dashboard. Get the latest version for your platform below.</p>
+    <p class="note">The download is free. A license key is required to unlock the app the first time you open it.</p>
 
     <div class="card">
       <div class="buttons" id="buttons">
@@ -147,6 +183,12 @@
         </a>
       </div>
       <div class="status" id="status"></div>
+
+      <div class="divider-row">Get your license</div>
+
+      <a class="btn btn-outline" href="https://horizonassist.gumroad.com/l/horizon" target="_blank" rel="noopener">
+        Unlock Your Horizon
+      </a>
     </div>
 
     <footer>
