@@ -6,34 +6,17 @@
 <title>HORIZON &mdash; Download</title>
 <style>
   :root {
-    --bg: #f7f7f5;
-    --fg: #1c1c1a;
-    --muted: #6b6b66;
-    --card-bg: #ffffff;
-    --border: #e4e3df;
-    --accent: #2f6f4f;
-    --accent-fg: #ffffff;
-    --accent-hover: #26593f;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #16171a;
-      --fg: #f0f0ee;
-      --muted: #9a9a96;
-      --card-bg: #1f2023;
-      --border: #2c2d30;
-      --accent: #4caf7d;
-      --accent-fg: #0e1410;
-      --accent-hover: #5fc491;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg: #16171a; --fg: #f0f0ee; --muted: #9a9a96; --card-bg: #1f2023;
-    --border: #2c2d30; --accent: #4caf7d; --accent-fg: #0e1410; --accent-hover: #5fc491;
-  }
-  :root[data-theme="light"] {
-    --bg: #f7f7f5; --fg: #1c1c1a; --muted: #6b6b66; --card-bg: #ffffff;
-    --border: #e4e3df; --accent: #2f6f4f; --accent-fg: #ffffff; --accent-hover: #26593f;
+    --bg: #12161D;
+    --fg: #EDE6D6;
+    --muted: #A9A296;
+    --muted-faint: #736C60;
+    --card-bg: #1B222C;
+    --border: rgba(237,230,214,0.10);
+    --border-strong: rgba(237,230,214,0.18);
+    --accent: #C9A227;
+    --accent-soft: #E4C25A;
+    --accent-fg: #20180A;
+    --font-display: Georgia, 'Palatino Linotype', 'Book Antiqua', serif;
   }
 
   * { box-sizing: border-box; }
@@ -56,19 +39,20 @@
   }
 
   .logo {
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
     letter-spacing: 0.14em;
-    color: var(--muted);
+    color: var(--accent);
     text-transform: uppercase;
     margin-bottom: 18px;
   }
 
   h1 {
+    font-family: var(--font-display);
     font-size: clamp(32px, 6vw, 44px);
-    font-weight: 700;
+    font-weight: 500;
     margin: 0 0 12px;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.01em;
   }
 
   p.tagline {
@@ -80,9 +64,10 @@
 
   .card {
     background: var(--card-bg);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
     border-radius: 16px;
     padding: 28px 24px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.25);
   }
 
   .buttons {
@@ -107,9 +92,9 @@
     cursor: pointer;
     transition: background 0.15s ease;
   }
-  .btn:hover { background: var(--accent-hover); }
+  .btn:hover { background: var(--accent-soft); }
   .btn[aria-disabled="true"] {
-    opacity: 0.55;
+    opacity: 0.5;
     pointer-events: none;
   }
   .btn .sub {
@@ -124,7 +109,7 @@
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    background: rgba(255,255,255,0.18);
+    background: rgba(32,24,10,0.18);
     padding: 2px 8px;
     border-radius: 999px;
     margin-left: 8px;
@@ -137,12 +122,12 @@
     min-height: 18px;
   }
 
-  .status a { color: var(--accent); }
+  .status a { color: var(--accent-soft); }
 
   footer {
     margin-top: 28px;
     font-size: 13px;
-    color: var(--muted);
+    color: var(--muted-faint);
   }
   footer a { color: var(--muted); }
   footer a:hover { color: var(--fg); }
