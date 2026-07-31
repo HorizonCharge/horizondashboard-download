@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ &middot; HORIZON</title>
+<meta name="description" content="Answers to common questions about HORIZON: pricing, licensing, privacy, and how updates work.">
+<style>
+  :root {
+    --bg: #12161D;
+    --fg: #EDE6D6;
+    --muted: #A9A296;
+    --muted-faint: #736C60;
+    --card-bg: #1B222C;
+    --card-bg-2: #202834;
+    --border: rgba(237,230,214,0.10);
+    --border-strong: rgba(237,230,214,0.18);
+    --accent: #C9A227;
+    --accent-soft: #E4C25A;
+    --accent-fg: #20180A;
+    --font-display: Georgia, 'Palatino Linotype', 'Book Antiqua', serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent-soft); }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+  }
+
+  header.masthead {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .logo {
+    width: 84px;
+    height: 84px;
+    display: block;
+    margin: 0 auto 14px;
+  }
+
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5.5vw, 38px);
+    font-weight: 500;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  p.tagline {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 auto 4px;
+    max-width: 520px;
+  }
+
+  .backlink {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .backlink:hover { color: var(--fg); border-color: var(--accent); }
+
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 10px 24px;
+    margin-bottom: 18px;
+  }
+
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 20px 0 4px;
+    color: var(--accent-soft);
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .faq-item:last-of-type { border-bottom: none; }
+
+  .faq-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15.5px;
+    color: var(--fg);
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: '+';
+    font-size: 20px;
+    line-height: 1;
+    color: var(--accent-soft);
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { content: '\2212'; }
+
+  .faq-item .faq-answer {
+    margin: 10px 0 0;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  .faq-item .faq-answer a { color: var(--accent-soft); }
+
+  footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--muted-faint);
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--fg); }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <img class="logo" src="logo.png" alt="HORIZON">
+      <div class="tag">HORIZON &middot; FAQ</div>
+      <h1>Questions people actually ask.</h1>
+      <p class="tagline">Pricing, licensing, privacy, and updates, answered plainly.</p>
+      <a class="backlink" href="index.html">&larr; Back to HORIZON</a>
+    </header>
+
+    <hr class="rule">
+
+    <section id="basics">
+      <h2>The basics</h2>
+
+      <details class="faq-item">
+        <summary>What is HORIZON?</summary>
+        <p class="faq-answer">A desktop budgeting app for tracking income, spending, debt payoff, savings goals, retirement projections, and receipts, all in one place, all stored on your own computer.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What platforms does it run on?</summary>
+        <p class="faq-answer">Windows and Mac.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is there a mobile app?</summary>
+        <p class="faq-answer">Not right now. HORIZON is desktop-only.</p>
+      </details>
+    </section>
+
+    <section id="licensing">
+      <h2>Buying &amp; licensing</h2>
+
+      <details class="faq-item">
+        <summary>How much does it cost? Is it a subscription?</summary>
+        <p class="faq-answer">It's a one-time purchase, currently $10 at early-user pricing. No monthly fee, ever. The price rises to $20 once the beta period ends, but if you buy at $10, you keep that rate for good.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>How do I get my license key?</summary>
+        <p class="faq-answer">After you buy through Gumroad, a license key is emailed to you automatically, usually within a minute or two. Paste it into the app the first time you open it.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>I never got my license key email. What do I do?</summary>
+        <p class="faq-answer">Check spam first. Still nothing? Email <a href="mailto:horizonbudgetsupport@gmail.com">horizonbudgetsupport@gmail.com</a> with your Gumroad order info and we'll look it up and resend it.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Can I use my license on more than one computer?</summary>
+        <p class="faq-answer">One license is meant for one device. If you need it on a second machine, reach out to support.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>What's your refund policy?</summary>
+        <p class="faq-answer">Refunds go through Gumroad's standard buyer policies, since that's who processes the purchase.</p>
+      </details>
+    </section>
+
+    <section id="privacy">
+      <h2>Privacy &amp; security</h2>
+
+      <details class="faq-item">
+        <summary>Is my financial data safe?</summary>
+        <p class="faq-answer">Yes. Everything you enter stays on your own device, nothing is uploaded, synced, or sent anywhere. See the full <a href="privacy.html">Privacy Policy</a> for details.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Do I need an internet connection to use HORIZON?</summary>
+        <p class="faq-answer">No. License verification happens fully offline, and all your data lives locally. The only time the app reaches the internet on its own is a quick startup check for a newer version.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Why does Windows show a warning when I download the installer?</summary>
+        <p class="faq-answer">That's Microsoft SmartScreen, standard behavior for any installer without a paid code-signing certificate. It's not a sign anything's wrong. Click the dropdown next to "Delete" in the warning and choose "Keep" to proceed.</p>
+      </details>
+    </section>
+
+    <section id="updates">
+      <h2>Updates</h2>
+
+      <details class="faq-item">
+        <summary>How do updates work?</summary>
+        <p class="faq-answer">HORIZON checks for a new version on startup and shows a banner if one's available. Nothing installs automatically, you choose when to update, or skip it entirely.</p>
+      </details>
+    </section>
+
+    <hr class="rule">
+
+    <footer>
+      <span>&copy; 2026 HORIZON &middot; <a href="index.html">horizonbudgetapp.com</a> &middot; <a href="privacy.html">Privacy Policy</a></span>
+    </footer>
+  </div>
+</body>
+</html>
