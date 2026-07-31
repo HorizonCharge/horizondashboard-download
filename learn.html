@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Basics &middot; HORIZON</title>
+<meta name="description" content="A plain-language primer on budgeting, saving, debt, credit, and investing basics, from the makers of HORIZON.">
+<style>
+  :root {
+    --bg: #12161D;
+    --fg: #EDE6D6;
+    --muted: #A9A296;
+    --muted-faint: #736C60;
+    --card-bg: #1B222C;
+    --card-bg-2: #202834;
+    --border: rgba(237,230,214,0.10);
+    --border-strong: rgba(237,230,214,0.18);
+    --accent: #C9A227;
+    --accent-soft: #E4C25A;
+    --accent-fg: #20180A;
+    --font-display: Georgia, 'Palatino Linotype', 'Book Antiqua', serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+  }
+
+  a { color: var(--accent-soft); }
+
+  .wrap {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 40px 20px 64px;
+  }
+
+  header.masthead {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .logo {
+    width: 84px;
+    height: 84px;
+    display: block;
+    margin: 0 auto 14px;
+  }
+
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 6px;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 5.5vw, 38px);
+    font-weight: 500;
+    margin: 0 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  p.tagline {
+    color: var(--muted);
+    font-size: 16px;
+    margin: 0 auto 4px;
+    max-width: 520px;
+  }
+
+  .backlink {
+    display: inline-block;
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--muted);
+    text-decoration: none;
+    border: 1px solid var(--border-strong);
+    padding: 6px 14px;
+    border-radius: 999px;
+  }
+  .backlink:hover { color: var(--fg); border-color: var(--accent); }
+
+  nav.toc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin: 28px 0 8px;
+  }
+  nav.toc a {
+    font-size: 13px;
+    text-decoration: none;
+    color: var(--muted);
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    padding: 7px 13px;
+    border-radius: 999px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  nav.toc a:hover {
+    color: var(--accent-soft);
+    border-color: var(--accent);
+  }
+
+  .glossary-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 18px;
+  }
+  .glossary-filters button {
+    font-family: inherit;
+    font-size: 13px;
+    cursor: pointer;
+    color: var(--muted);
+    background: var(--card-bg-2);
+    border: 1px solid var(--border);
+    padding: 7px 13px;
+    border-radius: 999px;
+    transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  }
+  .glossary-filters button:hover {
+    color: var(--accent-soft);
+    border-color: var(--accent);
+  }
+  .glossary-filters button.active {
+    background: var(--accent);
+    color: var(--accent-fg);
+    border-color: var(--accent);
+    font-weight: 600;
+  }
+
+  hr.rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+
+  section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 26px 24px;
+    margin-bottom: 18px;
+    scroll-margin-top: 20px;
+  }
+
+  section h2 {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 4px;
+    color: var(--accent-soft);
+  }
+
+  section .kicker {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted-faint);
+    margin-bottom: 14px;
+  }
+
+  section p { margin: 0 0 14px; color: var(--fg); }
+  section p:last-child { margin-bottom: 0; }
+  section ul { margin: 0 0 14px; padding-left: 20px; }
+  section ul:last-child { margin-bottom: 0; }
+  section li { margin-bottom: 8px; }
+
+  section li > ul {
+    margin: 8px 0 0;
+    padding-left: 18px;
+    list-style-type: circle;
+  }
+  section li > ul li {
+    margin-bottom: 6px;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  section li > ul li:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--card-bg-2);
+    border: 1px solid var(--border-strong);
+    border-left: 3px solid var(--accent);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: var(--muted);
+    margin: 14px 0;
+  }
+  .callout strong { color: var(--fg); }
+
+  .tip {
+    display: block;
+    margin-top: 4px;
+    color: var(--accent-soft);
+    font-weight: 600;
+  }
+
+  .tip-details {
+    margin-top: 8px;
+  }
+  .tip-details summary {
+    cursor: pointer;
+    color: var(--accent-soft);
+    font-weight: 600;
+    font-size: 14px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .tip-details summary::-webkit-details-marker { display: none; }
+  .tip-details summary::after {
+    content: '\25B8';
+    margin-left: 4px;
+    font-size: 11px;
+    transition: transform 0.15s ease;
+  }
+  .tip-details[open] summary::after { transform: rotate(90deg); }
+  .tip-details .tip-body {
+    margin: 6px 0 0;
+    padding-left: 20px;
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 0 0 14px;
+  }
+  @media (max-width: 520px) {
+    .split { grid-template-columns: 1fr; }
+  }
+  .split-card {
+    background: var(--card-bg-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .split-card .label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--accent-soft);
+    margin-bottom: 6px;
+  }
+  .split-card p { font-size: 14px; margin: 0; }
+
+  .cta {
+    text-align: center;
+    margin-top: 8px;
+  }
+  .cta .btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 10px;
+    background: var(--accent);
+    color: var(--accent-fg);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .cta .btn:hover { background: var(--accent-soft); }
+  .cta p { color: var(--muted); font-size: 13px; margin-top: 12px; }
+
+  footer {
+    text-align: center;
+    margin-top: 32px;
+    font-size: 12px;
+    color: var(--muted-faint);
+  }
+  footer a { color: var(--muted); }
+  footer a:hover { color: var(--fg); }
+  footer .disclaimer {
+    max-width: 520px;
+    margin: 0 auto 16px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="masthead">
+      <img class="logo" src="logo.png" alt="HORIZON">
+      <div class="tag">HORIZON &middot; Money Basics</div>
+      <h1>Financial literacy, plainly explained.</h1>
+      <p class="tagline">No jargon, no upsell. Just the fundamentals that make budgeting, saving, and debt payoff make sense.</p>
+      <a class="backlink" href="index.html">&larr; Back to HORIZON</a>
+    </header>
+
+    <nav class="toc" aria-label="Sections">
+      <a href="#budgeting">Budgeting</a>
+      <a href="#saving">Saving</a>
+      <a href="#debt">Debt</a>
+      <a href="#compound">Compounding</a>
+      <a href="#credit">Credit</a>
+      <a href="#investing">Investing</a>
+      <a href="#glossary">Glossary</a>
+    </nav>
+
+    <hr class="rule">
+
+    <section id="budgeting">
+      <div class="kicker">01 &middot; The foundation</div>
+      <h2>Budgeting basics</h2>
+      <p>A budget isn't a spending diet. It's just a plan for where your money goes before it goes there. The most common starting framework is the <strong>50/30/20 rule</strong>:</p>
+      <div class="split">
+        <div class="split-card">
+          <div class="label">50% &middot; Needs</div>
+          <p>Rent, utilities, groceries, minimum debt payments: things you'd struggle without.</p>
+        </div>
+        <div class="split-card">
+          <div class="label">30% &middot; Wants</div>
+          <p>Dining out, streaming, hobbies: the stuff that makes life enjoyable.</p>
+        </div>
+        <div class="split-card">
+          <div class="label">20% &middot; Savings &amp; debt</div>
+          <p>Emergency fund, retirement, extra payments beyond the minimum.</p>
+        </div>
+        <div class="split-card">
+          <div class="label">Track first</div>
+          <p>Before hitting exact percentages, just track a month of real spending. You can't budget what you haven't measured.</p>
+        </div>
+      </div>
+      <p>These percentages are a starting point, not a law. If rent and other bills are expensive where you live, your "needs" slice might need to be bigger than 50%, and that's okay. What matters most is having <em>a</em> plan.</p>
+      <details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Income and Spending sections track your real numbers automatically, so checking your spending against that plan takes seconds.</p></details>
+    </section>
+
+    <section id="saving">
+      <div class="kicker">02 &middot; The cushion</div>
+      <h2>Pizza is not an emergency</h2>
+      <p>An emergency fund exists to absorb shocks, like a car repair, a medical bill, or a layoff, without going into debt to cover them.</p>
+      <ul>
+        <li><strong>Start small.</strong> Even $500&ndash;$1,000 covers most minor emergencies and is a realistic first goal.</li>
+        <li><strong>Then build to 3&ndash;6 months of essential expenses.</strong> Self-employed or single-income households often lean toward the higher end.</li>
+        <li><strong>Keep it liquid and separate.</strong> A high-yield savings account is the usual choice: accessible in a day or two, but not sitting in your everyday checking account where it's easy to spend accidentally. Most major banks and credit unions offer one, and you can often open it entirely online in a few minutes.</li>
+        <li><strong>Automate it.</strong> Set up a small transfer that happens automatically on payday. That beats "saving whatever's left over," because whatever's left over is usually nothing. If your job offers direct deposit (your paycheck going straight into your bank account), some employers let you split it, sending a slice straight into savings before you ever see it. You can't spend money you never see. Starting at 1&ndash;2% of each paycheck beats the $100 you swear you'll save "next week" (you won't).</li>
+      </ul>
+      <div class="callout"><strong>Why this comes before extra debt payments or investing:</strong> without a cushion, an unexpected expense often gets put on a credit card, undoing progress made elsewhere.<details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Savings goals section is built for exactly this, tracking money set aside for emergencies separately from your regular monthly spending.</p></details></div>
+    </section>
+
+    <section id="debt">
+      <div class="kicker">03 &middot; Paying it down</div>
+      <h2>Owe less, sleep more</h2>
+      <p>Not all debt behaves the same way. <strong>APR</strong> (annual percentage rate) is the yearly cost of borrowing, including interest and most fees: the number to compare across cards and loans.</p>
+      <p>Two common strategies for paying down multiple debts, once minimums are covered on everything:</p>
+      <div class="split">
+        <div class="split-card">
+          <div class="label">Avalanche</div>
+          <p>Put extra money toward the <em>highest-interest</em> debt first. Mathematically saves the most money over time.</p>
+        </div>
+        <div class="split-card">
+          <div class="label">Snowball</div>
+          <p>Put extra money toward the <em>smallest balance</em> first. Costs a bit more in interest, but the quick wins keep motivation up.</p>
+        </div>
+      </div>
+      <p>Either strategy beats paying only the minimum and letting your balance grow bigger every month. The "best" method is the one you'll actually stick with.</p>
+      <details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Debt-free horizon section tracks whichever one you pick against your real balances, and shows you the date the last one hits zero.</p></details>
+    </section>
+
+    <section id="compound">
+      <div class="kicker">04 &middot; Interest, both ways</div>
+      <h2>The good, the bad, and the math</h2>
+      <p>Compound interest means you earn interest on your interest, not just on your original savings. If you owe money instead, it works the same way in reverse: you get charged interest on interest you already owe. Same snowball, just rolling in different directions depending on which side you're on.</p>
+      <div class="split">
+        <div class="split-card">
+          <div class="label">The good</div>
+          <p>In a savings or investment account, your balance earns interest, then earns interest on that interest too. Left alone, it snowballs, which is why starting early matters more than starting big.</p>
+        </div>
+        <div class="split-card">
+          <div class="label">The bad</div>
+          <p>On a credit card or high-interest loan, unpaid interest gets added to your balance, and next month you owe interest on that too. Pay only the minimum and the balance barely moves.</p>
+        </div>
+      </div>
+      <p>The math is identical either way: growth, or debt, accelerates the longer it compounds. Not because the rate changes, but because the amount it's calculated on keeps getting bigger.</p>
+      <div class="callout"><strong>Same math, opposite directions:</strong> $1,000 saved at 5% grows to roughly $1,629 after 10 years. $1,000 in credit card debt at 20% APR, left untouched, grows to roughly $6,192 in that same decade.<details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Debt-free horizon and Retirement number sections both run this math against your real numbers, so compounding stops being abstract and starts being a date on a calendar.</p></details></div>
+    </section>
+
+    <section id="credit">
+      <div class="kicker">05 &middot; The score</div>
+      <h2>Credit where it's due</h2>
+      <p>A credit score is simply a rough summary of how reliably you've repaid borrowed money. You could be fantastic with money and never have borrowed a dime in your life, and you'd still have no credit score at all. It's not an accurate reflection of who you are as a person: credit scores don't take into account anything but your borrowing and repayment history.</p>
+      <p>The most common scoring models weigh roughly:</p>
+      <ul>
+        <li><strong>Payment history (~35%):</strong> paying on time, every time, matters more than anything else.<span class="tip">💡 Setting up autopay for at least the minimum payment is an easy win here.</span></li>
+        <li><strong>Amounts owed (~30%):</strong> how much of your available credit you're actually using, also called your credit utilization. If your card's limit is $1,000 and you're carrying a $300 balance, that's 30% utilization, a common rule of thumb for staying in good shape. A common myth is that you have to carry a balance to build credit: you don't. Paying your statement in full every month still reports a balance to the credit bureaus, and it skips the interest charges carrying one would cost you.</li>
+        <li><strong>Length of credit history (~15%):</strong> older accounts help; this is part of why closing your oldest card can hurt your score, sometimes tanking it outright.</li>
+        <li><strong>New credit &amp; credit mix (~20% combined):</strong> too many new applications in a short time, or relying on only one type of credit, can ding your score slightly.<span class="tip">💡 Opening three new cards in one weekend is not the score boost you think it is.</span></li>
+      </ul>
+      <p>One more wrinkle: "your credit score" isn't actually one single number. There are three major credit bureaus, Experian, Equifax, and TransUnion, that each keep their own file on you, and two competing scoring models, FICO and VantageScore, that each do their own math on top of that file. That's why the number you see on your bank's app can differ from the one a lender pulls when you apply for a loan. All of them weigh the same basic factors above, just with slightly different math.</p>
+      <div class="callout">Many banks and credit card issuers now show your score for free right in their app, under your account summary or rewards section. No need to sign up for a separate paid service to check it.<details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Debt-free horizon section tracks your self-reported score against those same Poor-to-Exceptional ranges, and for credit card debts specifically, it calculates a live utilization percentage from your balance and limit, nudging you once you cross that 30% mark.</p></details></div>
+    </section>
+
+    <section id="investing">
+      <div class="kicker">06 &middot; The long game</div>
+      <h2>Money that makes money</h2>
+      <p>Investing sounds intimidating and mysterious, but it's simpler than it seems: you're letting someone, a company, a fund, sometimes a government, borrow your money for a while, and you get paid back based on how well they used it. There's real risk involved, no question about it. But there are plenty of ways to ease into it and manage that risk in small steps, until one day you catch yourself checking how the S&amp;P 500 did today.</p>
+      <ul>
+        <li><strong>Compound interest</strong> is why starting early matters more than starting big. See <a href="#compound">Section 04</a> above for a refresher on how it works.</li>
+        <li><strong>Retirement accounts</strong> (like a 401(k) or IRA in the U.S.) offer tax advantages specifically for long-term investing. Both a 401(k) and an IRA come in two flavors:
+          <ul>
+            <li><strong>Traditional retirement account:</strong> lowers your taxable income today, and gets taxed when you withdraw in retirement.</li>
+            <li><strong>Roth retirement account:</strong> taxed today, but grows and comes out completely tax-free later.</li>
+            <li><span class="tip">💡 If an employer matches 401(k) contributions, that match is typically worth capturing first since it's an immediate, guaranteed return.</span></li>
+          </ul>
+        </li>
+        <li><strong>Diversification</strong> means spreading money across many companies or asset types, often through a low-cost index fund. It reduces the damage any single investment's bad year can do to your overall portfolio.</li>
+        <li><strong>Time horizon matters.</strong> Money needed within the next few years generally doesn't belong in the stock market, where short-term swings are normal.</li>
+      </ul>
+      <div class="callout">This page explains concepts, not personalized advice. For decisions specific to your situation, a licensed financial advisor or tax professional is the right resource.<details class="tip-details"><summary>💡 How HORIZON helps with this</summary><p class="tip-body">The Retirement number section can still give you a rough estimate of the nest egg you'd need, using your own numbers, so investing has a concrete target instead of just being "someday."</p></details></div>
+    </section>
+
+    <section id="glossary">
+      <div class="kicker">07 &middot; The glossary</div>
+      <h2>Words your bank assumes you know</h2>
+      <p>A few more terms that get thrown around constantly and explained rarely. Here they are, in plain English. Click a category to learn terms you might hear:</p>
+      <div class="glossary-filters" role="group" aria-label="Filter glossary by topic">
+        <button type="button" data-filter="all">All terms</button>
+        <button type="button" data-filter="general">General</button>
+        <button type="button" data-filter="debt-mortgage">Debt &amp; mortgage</button>
+        <button type="button" data-filter="investing">Investing &amp; retirement</button>
+      </div>
+      <ul id="glossaryList">
+        <li data-group="general" hidden><strong>Gross vs. net income:</strong> gross is what you earn before anything gets taken out (taxes, insurance, retirement contributions). Net income, also called take-home pay, is what actually lands in your bank account after all of that. Budgeting off your gross number is a common early mistake, since it makes your available money look bigger than it really is.</li>
+        <li data-group="general" hidden><strong>Net worth:</strong> everything you own, added up, minus everything you owe. It's the single number that best captures where you actually stand financially, not just how much cash happens to be sitting in checking.</li>
+        <li data-group="general" hidden><strong>Liquidity:</strong> how quickly something can be turned into spendable cash without losing value. Cash in checking is fully liquid; a house is not, no matter what it's worth on paper.</li>
+        <li data-group="general" hidden><strong>HYSA (High-Yield Savings Account):</strong> a savings account, usually at an online bank, that pays a meaningfully higher interest rate than the near-zero rate most traditional banks offer on a regular savings account. Your money stays fully accessible, unlike a CD; you just earn more while it sits there.</li>
+        <li data-group="general" hidden><strong>CD (Certificate of Deposit):</strong> a savings account where you lock money away for a fixed term, anywhere from a few months to several years, in exchange for a guaranteed rate that's usually higher than a regular savings account. Pull the money out early and you'll typically pay a penalty, so it works best for money you already know you won't need before the term ends.</li>
+        <li data-group="general" hidden><strong>Inflation:</strong> the slow rise in prices over time, meaning a dollar today buys a little less than it will buy tomorrow. It's part of why cash sitting completely idle quietly loses value even when nothing else changes.</li>
+        <li data-group="general" hidden><strong>APY vs. APR:</strong> the rate depends on whether you're earning it or paying it. APY (Annual Percentage Yield) is what a savings account earns you, and it accounts for compounding. APR (Annual Percentage Rate) is what a loan costs you, and it doesn't. Comparing an APY to an APR is comparing two different things, even when the numbers look similar.</li>
+        <li data-group="debt-mortgage" hidden><strong>Principal:</strong> the original amount borrowed or invested, before interest gets added on top. Payments toward principal shrink what you owe; payments toward interest just cover the cost of borrowing it.</li>
+        <li data-group="debt-mortgage" hidden><strong>Equity:</strong> the part of something you actually own, free and clear. If your house is worth $300,000 and you still owe $200,000 on the mortgage, you have $100,000 in equity. You'll also see this word inside employer-sponsored retirement plans, where "equity funds" just means funds made up of stocks, ownership in companies, as opposed to bonds.</li>
+        <li data-group="investing" hidden><strong>Index fund vs. mutual fund vs. ETF:</strong> all three are baskets of many investments bundled into one, but they differ in management and trading.
+          <ul>
+            <li><strong>Mutual fund:</strong> professionally managed, and only trades once a day, after the market closes.</li>
+            <li><strong>Index fund:</strong> a mutual fund (or ETF) that simply tracks a market index, like the S&amp;P 500, instead of picking stocks by hand, which usually makes it cheaper.</li>
+            <li><strong>ETF (exchange-traded fund):</strong> trades throughout the day like a stock, and often tracks an index too.</li>
+          </ul>
+          In practice, "low-cost index fund" and "low-cost index ETF" get used almost interchangeably.
+        </li>
+        <li data-group="investing" hidden><strong>Vesting:</strong> the schedule that decides when employer-contributed money, like a 401(k) match, actually becomes yours to keep if you leave the job. Your own contributions are always 100% yours; the employer's match may not be until you've stuck around long enough.</li>
+        <li data-group="debt-mortgage" hidden><strong>Escrow:</strong> a separate account your mortgage lender holds to pay your property taxes and homeowners insurance on your behalf, funded by a slice of your monthly payment. It's why a "mortgage payment" is usually bigger than just principal and interest, and why it can shift year to year as taxes and insurance rates change.</li>
+        <li data-group="debt-mortgage" hidden><strong>PMI (Private Mortgage Insurance):</strong> an extra monthly cost lenders tack on when your down payment is under 20%. It's easy to confuse with homeowners insurance, but they're not the same thing: homeowners insurance protects your home and belongings, while PMI protects the lender if you default, not you. It usually shows up as another line added right into your mortgage payment alongside escrow.<span class="tip">💡 Once you've built up 20% equity, you can typically get it removed.</span></li>
+        <li data-group="investing" hidden><strong>Capital gains:</strong> the profit you make when you sell an investment for more than you paid for it. Outside a retirement account, that profit counts as taxable income, and selling investments means an extra tax form when you file (Schedule D and Form 8949 in the U.S., though your brokerage usually hands you the numbers already summarized). How long you held the investment matters too: sell within a year and it's taxed like regular income, hold it over a year and it usually gets a lower rate. If all that sounds nerve-wracking, a tax professional can walk you through filing it correctly for a fairly small fee, especially when you compare it to the IRS knocking on your door with an unexpected bill.</li>
+      </ul>
+    </section>
+
+    <hr class="rule">
+
+    <div class="cta">
+      <a class="btn" href="index.html">See HORIZON in action</a>
+      <p>Track income, spending, debt payoff, and savings goals against these same fundamentals.</p>
+    </div>
+
+    <footer>
+      <p class="disclaimer">This page is provided for general educational purposes only and is not financial, investment, or tax advice. HORIZON does not access, transmit, or store your financial data anywhere. Everything stays on your own device.</p>
+      <span>&copy; 2026 HORIZON &middot; <a href="index.html">horizonbudgetapp.com</a></span>
+    </footer>
+  </div>
+
+  <script>
+  (function () {
+    var buttons = document.querySelectorAll('.glossary-filters button');
+    var items = document.querySelectorAll('#glossaryList li[data-group]');
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        buttons.forEach(function (b) { b.classList.remove('active'); });
+        btn.classList.add('active');
+        var filter = btn.dataset.filter;
+        items.forEach(function (li) {
+          li.hidden = !(filter === 'all' || li.dataset.group === filter);
+        });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
