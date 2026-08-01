@@ -34,12 +34,27 @@
   a { color: var(--accent-soft); }
 
   .wrap {
+    position: relative;
     max-width: 720px;
     margin: 0 auto;
     padding: 40px 20px 64px;
   }
 
+  .badger-watermark {
+    position: absolute;
+    top: -24px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 520px;
+    max-width: 150%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+
   header.masthead {
+    position: relative;
+    z-index: 1;
     text-align: center;
     margin-bottom: 28px;
   }
@@ -146,6 +161,7 @@
 </head>
 <body>
   <div class="wrap">
+    <img class="badger-watermark" src="badger-watermark.png" alt="">
     <header class="masthead">
       <img class="logo" src="logo.png" alt="Horizon Map">
       <div class="tag">Horizon Map &middot; Privacy Policy</div>

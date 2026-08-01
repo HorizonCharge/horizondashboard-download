@@ -258,9 +258,22 @@
   .split-card p { font-size: 14px; margin: 0; }
 
   .cta {
+    position: relative;
     text-align: center;
     margin-top: 8px;
   }
+  .cta .badger-watermark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 480px;
+    max-width: 170%;
+    opacity: 0.08;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .cta .btn, .cta p { position: relative; z-index: 1; }
   .cta .btn {
     display: inline-block;
     padding: 14px 28px;
@@ -460,6 +473,7 @@
     <hr class="rule">
 
     <div class="cta">
+      <img class="badger-watermark" src="badger-watermark.png" alt="">
       <a class="btn" href="index.html">See Horizon Map in action</a>
       <p>Track income, spending, debt payoff, and savings goals against these same fundamentals.</p>
     </div>
