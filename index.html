@@ -181,6 +181,63 @@
   }
   footer a { color: var(--muted); }
   footer a:hover { color: var(--fg); }
+
+  .free-card {
+    position: relative;
+    overflow: hidden;
+    margin-top: 16px;
+    background: linear-gradient(160deg, rgba(201,162,39,0.10), var(--card-bg) 60%);
+    border: 1px solid var(--border-strong);
+    border-radius: 16px;
+    padding: 24px;
+    text-align: left;
+  }
+  .free-card::before {
+    content: "";
+    position: absolute;
+    right: -18px;
+    bottom: -14px;
+    width: 260px;
+    height: 230px;
+    background-image: url('badger-watermark.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    opacity: 0.55;
+    pointer-events: none;
+  }
+  .free-card .free-content {
+    position: relative;
+    z-index: 1;
+  }
+  .free-card .free-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--accent-fg);
+    background: var(--accent-soft);
+    padding: 3px 9px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+  }
+  .free-card h2 {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 500;
+    margin: 0 0 8px;
+    color: var(--fg);
+  }
+  .free-card p {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0 0 18px;
+  }
+  .free-card .btn {
+    width: 100%;
+  }
 </style>
 </head>
 <body>
@@ -208,9 +265,18 @@
       </a>
     </div>
 
+    <div class="free-card">
+      <div class="free-content">
+        <span class="free-tag">Free for everyone</span>
+        <h2>Money Basics</h2>
+        <p>A plain-English guide to budgeting, debt payoff, credit scores, and investing. No purchase, no license, no account. Ours to give, whether or not you ever use Horizon Map.</p>
+        <a class="btn" href="learn.html">Explore Money Basics</a>
+      </div>
+    </div>
+
     <footer>
       <span id="version-footer"></span>
-      <div style="margin-top:6px;"><a href="faq.html">FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a></div>
+      <div style="margin-top:6px;">&copy; 2026 Horizon Interactive &middot; <a href="faq.html">FAQ</a> &middot; <a href="privacy.html">Privacy Policy</a></div>
     </footer>
   </div>
 
